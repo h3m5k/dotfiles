@@ -1,5 +1,12 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+# Package dependancies:
+# 
+# - compton
+# - rofi
+# - dunst
+# - feh
+
 ## auto-start thingies
 # compton composite manager
 exec --no-startup-id compton
