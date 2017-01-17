@@ -13,8 +13,8 @@ set sidebar_visible=yes
 # color of folders with new mail
 color sidebar_new green default
 
-set sidebar_delim='|'
-set sidebar_sort=yes
+#set sidebar_delim='|'
+#set sidebar_sort=yes
 
 # which mailboxes to list in the sidebar
 mailboxes =Inbox
