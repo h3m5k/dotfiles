@@ -1,0 +1,13 @@
+# MIME types to auto-view
+auto_view text/html
+
+# this helps with multipart messages
+alternative_order text/plain text/html
+
+# forward message including attachments
+set mime_forward=yes 
+set mime_forward_rest=yes
+
+# To add own comments to the top of the forwarded message;
+# Go to the attachment-menu, tag all attachments you want to forward and also tag the text part of the e-mail. 
+# Then invoke "tag-prefix" + "forward"
