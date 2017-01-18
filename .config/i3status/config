@@ -35,6 +35,8 @@ ethernet _first_ {
 
 battery 0 {
         format = "%status %percentage %remaining"
+	integer_battery_capacity = true
+	threshold_type = percentage
 	low_threshold = 10
 }
 
