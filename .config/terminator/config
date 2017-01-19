@@ -30,7 +30,7 @@
 [profiles]
   [[default]]
     active_encodings = ISO-8859-15, UTF-8, ISO-8859-1
-    background_color = "#2d2d2d"
+    background_color = "#1c1c1c"
     background_darkness = 0.96
     background_image = None
     background_type = transparent

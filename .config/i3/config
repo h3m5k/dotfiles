@@ -214,7 +214,7 @@ bindsym $mod+ctrl+l exec i3lock --ignore-empty-password -c 233038
 ## For child windows: xprop | grep -i 'role'
 
 ## Spotify
-for_window [class="^Spotify$"] floating enable
+for_window [class="^Spotify$"] floating enable resize set 1400 800
 
 # Scratchpad
 ## Hide to scratchpad
