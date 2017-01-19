@@ -40,7 +40,7 @@ set GIT_PROMPT_CLEAN "$BGreen✔"
 function fish_prompt
 
   if not set -q __fish_prompt_hostname
-    set -g __fish_prompt_hostname (set_color ffffff)(hostname|cut -d . -f 1)
+    set -g __fish_prompt_hostname (set_color red)(hostname|cut -d . -f 1)
   end
 
   if not set -q __fish_prompt_normal
@@ -48,7 +48,7 @@ function fish_prompt
   end
 
   if not set -q __fish_prompt_user
-    set -g __fish_prompt_user (set_color red)(whoami)
+    set -g __fish_prompt_user (set_color ffffff)(whoami)
   end
 
   switch $USER
