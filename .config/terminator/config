@@ -35,5 +35,7 @@
     background_image = None
     background_type = transparent
     cursor_color = "#828282"
+    font = Liberation Mono 10
     foreground_color = "#b5b5b5"
     scrollback_lines = 1000
+    use_system_font = False
