@@ -2,6 +2,9 @@ uncolor index *
 uncolor header *
 uncolor body *
 
+# Documentation:
+# http://www.mutt.org/doc/manual/#color
+
 # colors
 color normal    default default
 color attachment brightyellow default
@@ -12,7 +15,7 @@ color indicator default cyan
 color markers   green default
 color message	cyan default
 color signature cyan default
-color status    brightgreen blue
+color status    yellow default
 color tilde     blue default
 color tree      red default
 color underline	brightdefault default
