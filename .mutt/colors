@@ -15,7 +15,7 @@ color indicator default cyan
 color markers   green default
 color message	cyan default
 color signature cyan default
-color status    yellow default
+color status    yellow black
 color tilde     blue default
 color tree      red default
 color underline	brightdefault default
