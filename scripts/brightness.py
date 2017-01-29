@@ -12,6 +12,7 @@ cmd = args[1]
 max = 1.0
 min = 0.1
 lvlChnge = 0.1
+newVal = None
 
 # Get current value
 xrandrOut = subprocess.Popen('xrandr --verbose', shell=True, stdout=subprocess.PIPE)
@@ -20,22 +21,18 @@ for line in xrandrOut.stdout:
 		line = line.split(':')
 		curVal = float(line[1])
 
-
-# Set paramer for
+# Set newVal variable
 if cmd == 'inc':
 	if curVal < max:
 		newVal = curVal + lvlChnge  	
-	else:
-		newVal = None
+
 elif cmd == 'dec':
 	if curVal > min:
 		newVal = curVal - lvlChnge
-	else:
-		newVal = None
+
 else:
 	print 'Arg cmd error'
 	sys.exit('1')
-
 
 # Set new value
 if newVal is not None:
