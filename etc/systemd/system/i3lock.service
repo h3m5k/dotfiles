@@ -1,0 +1,13 @@
+[Unit]
+Description=i3lock on suspend
+Before=sleep.target
+
+[Service]
+User=goran
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/i3lock --ignore-empty-password -c 233038
+
+[Install]
+WantedBy=sleep.target
+
