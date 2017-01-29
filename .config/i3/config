@@ -1,11 +1,25 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-# Package dependancies:
-# 
+# TO FIX:
+# border in terminator
+# colors in term/edit-files
+# terminator.. new term should focus there-....
+
+
+### Dependancies:
+
+## Packages:
 # - compton
 # - rofi
 # - dunst
 # - feh
+# - qalc
+# - scrot
+# - gnome-screensaver?
+
+## Scripts
+# - brightness.py
+# - rofi-demenu.sh
 
 ## auto-start thingies
 # compton composite manager
@@ -14,13 +28,15 @@ exec --no-startup-id compton
 exec --no-startup-id dunst
 # network manager
 exec --no-startup-id nm-applet
+# gnome-screensaver, lockscreen
+exec --no-startup-id gnome-screensaver
 # load Xresources
 exec --no-startup-id xrdb -merge ~/.XResources
 # fix headphone noise bug on DELL XPS13
-exec --no-startup-id amixer -q set "Headphone Mic Boost" 10dB
+exec --no-startup-id amixer -q -c 0 set "Headphone Mic Boost" 10dB
 # set volumes
-exec --no-startup-id amixer -q set Headphone 100% unmute
-exec --no-startup-id amixer -q set Speaker 100% unmute
+exec --no-startup-id amixer -q -c 0 set Headphone 100% unmute
+exec --no-startup-id amixer -q -c 0 set Speaker 100% unmute
 
 # Set mod-button
 set $mod Mod4
@@ -206,6 +222,7 @@ bindsym $mod+ctrl+Left workspace prev
 # Lock screen shortcut
 bindsym $mod+ctrl+l exec i3lock --ignore-empty-password -c 233038
 #bindsym $mod+ctrl+l exec /usr/local/bin/lock.sh
+#bindsym $mod+ctrl+l exec gnome-screensaver-command -l
 
 
 # Float windows
@@ -224,17 +241,18 @@ bindsym $mod+ctrl+u scratchpad show
 
 
 ### VOLUME CONTROL ###
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
-bindsym XF86AudioMute exec ~/.config/i3/mute-toggle
+bindsym XF86AudioRaiseVolume exec amixer -q -c 0 set Master 2dB+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q -c 0 set Master 2dB- unmute
+#bindsym XF86AudioMute exec mute-toggle
+bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # Sreen brightness controls
-# bug in 16.10 broke xbacklight.. using bright - simple bash thing meanwhile
+# bug in 16.10/stretch broke xbacklight.. using bright - simple bash thing meanwhile
 # https://bugs.launchpad.net/ubuntu/+source/xbacklight/+bug/1638136
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 20
 #bindsym XF86MonBrightnessDown exec xbacklight -dec 20
-bindsym XF86MonBrightnessUp exec bright 2
-bindsym XF86MonBrightnessDown exec bright -2
+bindsym XF86MonBrightnessUp exec brightness.py inc
+bindsym XF86MonBrightnessDown exec brightness.py dec
 
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/bash_wallpaper.png
 bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/Screenshots/'

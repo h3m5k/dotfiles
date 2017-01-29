@@ -1,5 +1,5 @@
 #!/bin/sh
-amixer -qs <<EOF
+amixer -c0 -qs <<EOF
 set Master toggle
 set Headphone toggle
 set Speaker toggle

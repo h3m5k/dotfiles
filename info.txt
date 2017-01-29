@@ -1,3 +1,8 @@
+add https://wiki.archlinux.org/index.php/Libinput#Configuration
+ /etc/X11/xorg.conf.d/30-touchpad.conadd https://wiki.archlinux.org/index.php/Libinput#Configuration
+ /etc/X11/xorg.conf.d/30-touchpad.conff
+
+
 * Theme:
   - adapta-gtk-theme
 
