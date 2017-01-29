@@ -28,8 +28,8 @@ exec --no-startup-id compton
 exec --no-startup-id dunst
 # network manager
 exec --no-startup-id nm-applet
-# gnome-screensaver, lockscreen
-exec --no-startup-id gnome-screensaver
+# gnome-screensaver, lockscreen fix dat bg before use.
+#exec --no-startup-id gnome-screensaver
 # load Xresources
 exec --no-startup-id xrdb -merge ~/.XResources
 # fix headphone noise bug on DELL XPS13
