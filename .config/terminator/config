@@ -34,7 +34,7 @@
     background_darkness = 0.96
     background_type = transparent
     cursor_color = "#828282"
-    font = Liberation Mono 10
+    font = DejaVu Sans Mono 10
     foreground_color = "#b5b5b5"
     scrollback_lines = 1000
     scrollbar_position = hidden
