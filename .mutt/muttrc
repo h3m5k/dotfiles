@@ -94,6 +94,14 @@ bind pager <down> next-line
 # imap fetch mail
 bind index G imap-fetch-mail
 
+# Add to abook
+macro index,pager A "<pipe-message>abook --add-email-quiet<return>" "add the sender address to abook"
+# enable tab-completion for abook searches in To: field
+bind editor <tab> complete-query
+# enable abook Queries
+set query_command="abook --mutt-query '%s'"
+
+
 # Source other files
 source ~/.mutt/sidebar
 source ~/.mutt/colors
