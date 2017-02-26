@@ -30,6 +30,9 @@ set ssl_force_tls = yes
 # Don't wait to enter mailbox manually 
 unset imap_passive 
 
+# Read/new is sufficient
+unset mark_old
+
 # Automatically poll subscribed mailboxes for new mail (new in 1.5.11)
 set imap_check_subscribed
 set imap_list_subscribed
@@ -51,6 +54,9 @@ set include = yes
 
 # Dont ask for subject line when responding to email, use existing
 set fast_reply
+
+# forward subject formatting
+set forward_format = "Fwd: %s"
 
 # Speed up folders switch
 set sleep_time = 0
