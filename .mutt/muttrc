@@ -41,7 +41,7 @@ set imap_list_subscribed
 set send_charset = 'utf-8'
 
 # editor
-set editor = 'vim'
+set editor = "vim -c 'set tw=78'"
 
 # no ugly plus signs at line breaks
 unset markers  
