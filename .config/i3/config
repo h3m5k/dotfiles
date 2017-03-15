@@ -263,7 +263,7 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 bindsym XF86MonBrightnessUp exec brightness.py inc
 bindsym XF86MonBrightnessDown exec brightness.py dec
 
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/bash_wallpaper.png
+exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/debian_greenish.png
 bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/Screenshots/'
 
 ### COLORS ###
