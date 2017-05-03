@@ -6,6 +6,8 @@ filetype plugin indent on
 
 syntax on
 set ignorecase
+set relativenumber
+set number
 " disable mouse
 set mouse-=a
 " show status line
