@@ -1,3 +1,7 @@
+" enter the current millenium
+" must be first, because it changes other options as a side effect
+set nocompatible
+
 " Enable pathogen plugin manager
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
@@ -6,6 +10,9 @@ filetype plugin indent on
 
 syntax on
 set ignorecase
+set autoindent
+" dont continue with comment after enter in insert or o/O
+set formatoptions-=cro
 
 " default to hybrid line numbers
 set number
