@@ -11,6 +11,7 @@ filetype plugin indent on
 syntax on
 set ignorecase
 set autoindent
+set noswapfile
 " dont continue with comment after enter in insert or o/O
 set formatoptions-=cro
 
