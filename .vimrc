@@ -35,3 +35,36 @@ set mouse-=a
 
 " show status line
 set laststatus=2
+" Open tabs when switching buffers. to the existing tab if the buffer is open, or creating a new one if not
+set switchbuf=usetab,newtab
+
+" COLORS!
+" enable 256 colors
+set t_Co=256
+
+" MOLOKAI
+let g:molokai_original = 1
+colorscheme molokai
+
+" SOLARIZED
+"set background=dark
+"let g:solarized_termcolors=256
+"colorscheme solarized
+
+" SYNTASTIC SETTINGS
+" recommended defaults
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"
+"" modemap settings
+"let g:syntastic_mode_map = {
+"    \ "mode": "active",
+"    \ "active_filetypes": ["puppet", "php", "sh", "python"],
+"    \ "passive_filetypes": ["ruby"] }
+

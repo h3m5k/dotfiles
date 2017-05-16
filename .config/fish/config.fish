@@ -142,3 +142,7 @@ function fish_prompt
 
 end
 
+# Make tmux play nicely with colors.
+# Also needs `set -g default-terminal "screen-256color"`
+# in tmux.conf
+alias tmux "env TERM=screen-256color tmux"
