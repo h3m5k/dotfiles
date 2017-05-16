@@ -146,3 +146,8 @@ end
 # Also needs `set -g default-terminal "screen-256color"`
 # in tmux.conf
 alias tmux "env TERM=screen-256color tmux"
+
+# Base16 Shell
+if status --is-interactive
+    eval sh $HOME/.config/base16-shell/scripts/base16-monokai.sh
+end
