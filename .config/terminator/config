@@ -29,6 +29,7 @@
 [plugins]
 [profiles]
   [[default]]
+    xterm = xterm-256color
     active_encodings = ISO-8859-15, UTF-8, ISO-8859-1
     background_color = "#232323"
     background_darkness = 0.98
