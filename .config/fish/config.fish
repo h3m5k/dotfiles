@@ -5,6 +5,9 @@ end
 # editor
 set -Ux EDITOR vim
 
+# avoid termite SSH mess
+set -x TERM xterm-256color
+
 # Colors
 # Reset
 set ResetColor (set_color normal)       # Text Reset

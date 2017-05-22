@@ -37,6 +37,9 @@ set mouse-=a
 set laststatus=2
 " Open tabs when switching buffers. to the existing tab if the buffer is open, or creating a new one if not
 set switchbuf=usetab,newtab
+" Nagivate tabs like in chromium
+nnoremap <C-PageUp> :tabprevious<CR>
+nnoremap <C-PageDown> :tabnext<CR>
 
 " COLORS!
 " enable 256 colors
