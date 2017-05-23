@@ -34,84 +34,54 @@ scrollback_lines = 10000
 #size_hints = false
 
 [colors]
-# If both of these are unset, cursor falls back to the foreground color,
-# and cursor_foreground falls back to the background color.
-#cursor = #dcdccc
-#cursor_foreground = #dcdccc
 
-#foreground = #dcdccc
-#foreground_bold = #ffffff
-#background = #232323
-
-# 20% background transparency (requires a compositor)
-#background = rgba(23, 23, 23, 0.95)
-
-# If unset, will reverse foreground and background
-##highlight = #2f2f2f
-
-#http://terminal.sexy/
-
-#---
-[colors]
+## http://terminal.sexy/
 
 # special
-foreground      = #ffffff
+foreground      = #d1d1d1
 foreground_bold = #ffffff
 cursor          = #ffffff
-background      = #1b1b1b
+background      = #212121
 
 # black
-color0  = #3d3d3d
-color8  = #4d4d4d
+color0  = #555555
+color8  = #888888
 
 # red
-color1  = #6673bf
-color9  = #899aff
+color1  = #c13220
+#color1  = #9c3528
+color9  = #d64937
 
 # green
-color2  = #3ea290
-color10 = #52ad91
+color2  = #61bc3b
+color10 = #86df5d
 
 # yellow
-color3  = #b0ead9
-color11 = #98c9bb
+color3  = #f3b43a
+color11 = #fdd75a
 
 # blue
-color4  = #31658c
-color12 = #477ab3
+color4  = #0d68a8
+color12 = #0f75bd
 
 # magenta
-color5  = #596196
-color13 = #7882bf
+color5  = #744560
+color13 = #9e5e83
 
 # cyan
-color6  = #8292b2
-color14 = #95a7cc
+color6  = #288e9c
+color14 = #37c3d6
 
 # white
-color7  = #c8cacc
-color15 = #edeff2
-
-#---
+color7  = #a2a2a2
+color15 = #f9f9f9
 
 
-# Colors from color0 to color254 can be set
-#color0 = #3f3f3f
-#color1 = #705050
-#color2 = #60b48a
-#color3 = #dfaf8f
-#color4 = #506070
-#color5 = #dc8cc3
-#color6 = #8cd0d3
-#color7 = #dcdccc
-#color8 = #709080
-#color9 = #dca3a3
-#color10 = #c3bf9f
-#color11 = #f0dfaf
-#color12 = #94bff3
-#color13 = #ec93d3
-#color14 = #93e0e3
-#color15 = #ffffff
+# 20% background transparency (requires a compositor)
+#background = rgba(23, 23, 23, 0.55)
+
+# If unset, will reverse foreground and background
+#highlight = #2f2f2f
 
 [hints]
 #font = Monospace 12
