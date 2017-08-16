@@ -1,8 +1,9 @@
 # MIME types to auto-view
 auto_view text/html
 
-# this helps with multipart messages
-alternative_order text/plain text/html
+# supposed to prevent non html mails to be auto_view'ed
+# but seems to not show any mail with auto_view instead
+#alternative_order text/plain text/enriched text/html
 
 # forward message including attachments
 set mime_forward=yes 
