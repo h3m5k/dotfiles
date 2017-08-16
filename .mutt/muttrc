@@ -110,6 +110,7 @@ set query_command="abook --mutt-query '%s'"
 macro generic,index,pager \ca "<shell-escape>abook<return>" "launch abook"
 
 # Source other files
+set mailcap_path = ~/.mutt/mailcap
 source ~/.mutt/sidebar
 source ~/.mutt/colors
 source ~/.mutt/mime
