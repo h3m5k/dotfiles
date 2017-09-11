@@ -31,6 +31,8 @@ exec --no-startup-id xss-lock -- i3lock -n -c 233038
 exec --no-startup-id compton
 # dunst notification manager
 exec --no-startup-id dunst
+#bindsym $mod+Shift+i exec --no-startup-id dunst
+
 # network manager
 exec --no-startup-id nm-applet
 # gnome-screensaver, lockscreen fix dat bg before use.
@@ -69,7 +71,8 @@ workspace_layout stacking
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
