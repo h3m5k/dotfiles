@@ -5,18 +5,19 @@
 # https://github.com/zanshin/dotfiles/blob/master/mutt/mutt/muttrc
 
 # IMAP-configuration
-set spoolfile = 'imap://goran.eriksson@management.evalent.com:143/'
+set spoolfile = 'imaps://gorane@imap.axis.com:993/'
 
 # SMTP-configuration
-set smtp_url = 'smtp://goran.eriksson@management.evalent.com:587/'
+set smtp_url = 'smtp://gorane@smtp-x.axis.com:587/'
 
 # Set FROM-headers
 set realname = 'Göran Eriksson'
-set from = 'goran.eriksson@evalent.com'
+set from = 'goran.eriksson@axis.com'
 set use_from = yes
 
 # Define the = shortcut, and the entry point for the folder browser (c?)
-set folder = 'imap://goran.eriksson@management.evalent.com:143/'
+# https://dev.mutt.org/trac/wiki/MuttGuide/Folders
+set folder = 'imaps://imap.axis.com:993/'
 set record = '=Sent'
 set postponed = '=Drafts'
 set trash = '=Trash'
@@ -26,6 +27,9 @@ set ssl_starttls = yes
 
 # always use SSL when connecting to a server
 set ssl_force_tls = yes
+
+# Fix for SMTP no authenticators available
+set smtp_authenticators = 'gssapi:login'
 
 # Don't wait to enter mailbox manually 
 unset imap_passive 

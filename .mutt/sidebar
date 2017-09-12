@@ -1,6 +1,6 @@
 ### SideBar
 
-# Requires mutt-patched.
+# is patched in 1.7.0, otherwise requires mutt-patched
 
 # For configuration documentation:
 # http://www.lunar-linux.org/mutt-sidebar/
