@@ -12,6 +12,7 @@ syntax on
 set ignorecase
 set autoindent
 set noswapfile
+set paste
 " dont continue with comment after enter in insert or o/O
 set formatoptions-=cro
 
