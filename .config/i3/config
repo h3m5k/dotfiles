@@ -25,7 +25,7 @@
 ## auto-start thingies
 # sleep-lock
 # screensaver on after 180s = locked
-exec --no-startup-id xset 180 180
+exec --no-startup-id xset s 180 180
 exec --no-startup-id xss-lock -- i3lock -n -c 233038
 # compton composite manager
 exec --no-startup-id compton
