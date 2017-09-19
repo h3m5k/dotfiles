@@ -3,7 +3,8 @@
 #
 # To use w systemd, copy .timer and .service files to /etc/systemd/user
 # and enable them.
-
+#
+# File is not to be symlinked until we handle pwurds better.
 
 [general]
 accounts = Work
