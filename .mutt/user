@@ -1,0 +1,6 @@
+# User config
+set my_realname="Göran Eriksson"
+set my_username="gorane"
+set my_domain="axis.com"
+set my_fromaddr="goran.eriksson@axis.com"
+

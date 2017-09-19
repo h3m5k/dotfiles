@@ -1,32 +1,17 @@
 ### SideBar
 
-# is patched in 1.7.0, otherwise requires mutt-patched
-
-# For configuration documentation:
-# http://www.lunar-linux.org/mutt-sidebar/
-
-set sidebar_width=40
-
-#Visible when opening mutt when yes
-set sidebar_visible=yes
-
-# color of folders with new mail
-color sidebar_new green default
-
+# settings
+set sidebar_width=25
+set sidebar_visible # be there when mutt opens
+set mail_check_stats # mandatory for use with %N formatting
+set sidebar_format="%B% %* %?N?%N/?%S"
 #set sidebar_delim='|'
 #set sidebar_sort=yes
 
-# which mailboxes to list in the sidebar
-mailboxes =Inbox
+#bindings
+bind index \CP sidebar-prev # Previous mailbox
+bind index \CN sidebar-next # Next mailbox
+bind index \CO sidebar-open # Open selected mailbox
 
-# ctrl-n, ctrl-p to select next, prev folder
-# ctrl-o to open selected folder
-bind index CP sidebar-prev
-bind index CN sidebar-next
-bind index CO sidebar-open
-macro index b '<enter-command>toggle sidebar_visible<enter>'
-macro pager b '<enter-command>toggle sidebar_visible<enter>'
-
-# Remap bounce-message function to “B”
-bind index B bounce-message
-
+# colors
+color sidebar_new green default # color of folders with new mail

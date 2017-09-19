@@ -1,9 +1,8 @@
-# MIME types to auto-view
+# MIME types to auto-view as defined in mailcap
 auto_view text/html
 
-# supposed to prevent non html mails to be auto_view'ed
-# but seems to not show any mail with auto_view instead
-#alternative_order text/plain text/enriched text/html
+# preferred available types, uses auto_view if matched.
+alternative_order text/plain text/enriched text/html text
 
 # forward message including attachments
 set mime_forward=yes 

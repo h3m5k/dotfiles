@@ -1,0 +1,34 @@
+# Sample minimal config file.  Copy this to ~/.offlineimaprc and edit to
+# get started fast.
+#
+# To use w systemd, copy .timer and .service files to /etc/systemd/user
+# and enable them.
+
+
+[general]
+accounts = Work
+
+[Account Work]
+# min between syncs, regardless of type
+#autorefresh = 0.5
+# 10 quick refreshes for each full
+# Quick-syncs does not update if the only changes were to IMAP flags.
+#quick = 10
+localrepository = Local
+remoterepository = Remote
+
+[Repository Local]
+type = Maildir
+localfolders = ~/Maildir
+
+[Repository Remote]
+type = IMAP
+# internal IP
+#remotehost = imap.axis.com
+# External/internal IP
+remotehost = owa.axis.com 
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+remoteuser = gorane
+remotepass = THEUBERSECRETPWURD
+folderfilter = lambda foldername: not re.search('^(Deleted\sItems\.\w+|Notes|Calendar|Contacts|Journal|Outbox|Tasks)$', foldername)

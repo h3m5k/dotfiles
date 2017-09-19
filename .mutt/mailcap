@@ -1,2 +1,4 @@
 #text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump %s; nametemplate=%s.html; copiousoutput
-text/html; w3m -I %{charset} -T text/html; copiousoutput;
+#text/html; w3m -I %{charset} -T text/html; copiousoutput;
+# lynx only recognize files as text/html if file ends w .html, therfore nametemplate.
+text/html; lynx -dump -width ${COLUMNS:-80} %s; nametemplate=%s.html; copiousoutput

@@ -1,0 +1,97 @@
+[options]
+allow_bold = true
+#audible_bell = false
+#clickable_url = true
+#dynamic_title = true
+#font = Monospace 9
+font = DejaVu Sans Mono 10
+#fullscreen = true
+#geometry = 640x480
+#icon_name = terminal
+#mouse_autohide = false
+#scroll_on_output = false
+#scroll_on_keystroke = true
+scrollback_lines = 10000
+#search_wrap = true
+#urgent_on_bell = true
+
+# $BROWSER is used by default if set, with xdg-open as a fallback
+#browser = xdg-open
+
+# "system", "on" or "off"
+cursor_blink = on
+
+# "block", "underline" or "ibeam"
+#cursor_shape = block
+
+# Hide links that are no longer valid in url select overlay mode
+#filter_unmatched_urls = true
+
+# Emit escape sequences for extra modified keys
+#modify_other_keys = false
+
+# set size hints for the window
+#size_hints = false
+
+[colors]
+
+## http://terminal.sexy/
+
+# special
+foreground      = #d1d1d1
+foreground_bold = #ffffff
+cursor          = #ffffff
+background      = #212121
+
+# black
+color0  = #555555
+color8  = #888888
+
+# red
+color1  = #c13220
+#color1  = #9c3528
+color9  = #d64937
+
+# green
+color2  = #61bc3b
+color10 = #86df5d
+
+# yellow
+color3  = #f3b43a
+color11 = #fdd75a
+
+# blue
+color4  = #0d68a8
+color12 = #0f75bd
+
+# magenta
+color5  = #744560
+color13 = #9e5e83
+
+# cyan
+color6  = #288e9c
+color14 = #37c3d6
+
+# white
+color7  = #a2a2a2
+color15 = #f9f9f9
+
+
+# 20% background transparency (requires a compositor)
+#background = rgba(23, 23, 23, 0.55)
+
+# If unset, will reverse foreground and background
+#highlight = #2f2f2f
+
+[hints]
+#font = Monospace 12
+#foreground = #dcdccc
+#background = #3f3f3f
+#active_foreground = #e68080
+#active_background = #3f3f3f
+#padding = 2
+#border = #3f3f3f
+#border_width = 0.5
+#roundness = 2.0
+
+# vim: ft=dosini cms=#%s

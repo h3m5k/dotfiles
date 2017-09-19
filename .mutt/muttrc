@@ -1,77 +1,90 @@
-# inspiration:
-# http://www.davep.org/mutt/muttrc/ 
-# https://dev.mutt.org/trac/wiki/ConfigList
-# https://github.com/falconindy/dotfiles/blob/master/.mutt/muttrc
-# https://github.com/zanshin/dotfiles/blob/master/mutt/mutt/muttrc
+### Source external files
+source "~/.mutt/user"
+source ~/.mutt/sidebar
+source ~/.mutt/colors
+source ~/.mutt/mime
+set mailcap_path = ~/.mutt/mailcap
 
-# IMAP-configuration
-set spoolfile = 'imaps://gorane@imap.axis.com:993/'
 
-# SMTP-configuration
-set smtp_url = 'smtp://gorane@smtp-x.axis.com:587/'
+### IMAP-configuration
+#set imap_user = $my_username
+#set spoolfile = 'imaps://$my_username@imap.axis.com:993/INBOX'
+#set folder = 'imaps://imap.axis.com:993/'
+#set postponed = 'imaps://imap.axis.com:993/Drafts'
+#set record = 'imaps://imap.axis.com:993/Sent Items'
+#set trash = 'imaps://imap.axis.com:993/Deleted Items'
+# mailboxes ... # which boxes to monitor 
+#unset imap_passive # Don't wait to enter mailbox manually 
+# Automatically poll subscribed mailboxes for new mail
+#set imap_check_subscribed
+#set imap_list_subscribed
+#bind index G imap-fetch-mail # Look for new mail
 
-# Set FROM-headers
-set realname = 'Göran Eriksson'
-set from = 'goran.eriksson@axis.com'
-set use_from = yes
 
-# Define the = shortcut, and the entry point for the folder browser (c?)
-# https://dev.mutt.org/trac/wiki/MuttGuide/Folders
-set folder = 'imaps://imap.axis.com:993/'
-set record = '=Sent'
-set postponed = '=Drafts'
-set trash = '=Trash'
+### Local mail handling
+set mbox_type= Maildir
+set spoolfile = '~/Maildir/INBOX' # Default inbox
+set folder = '~/Maildir' # Mail folder location
+set record = '+Sent Items'
+set postponed = '+Drafts'
+#set trash = '+Deleted Items' #SYNC THIS
+# Mailboxes to show in the sidebar and monitor.
+mailboxes `echo -n "+ "; for file in ~/Maildir/*; do box=$(basename "$file"); echo -n "\"+$box\" "; done`
+# Fetch new mail
+macro index G "<shell-escape>offlineimap -o -u syslog<return>" "Sync mail w offlineimap"
 
-# activate TLS if available on the server
-set ssl_starttls = yes
 
-# always use SSL when connecting to a server
-set ssl_force_tls = yes
-
+### SMTP-configuration
+set smtp_url = 'smtp://$my_username@smtp-x.axis.com:587'
 # Fix for SMTP no authenticators available
 set smtp_authenticators = 'gssapi:login'
 
-# Don't wait to enter mailbox manually 
-unset imap_passive 
 
-# Read/new is sufficient
-unset mark_old
+### TLS
+set ssl_starttls = yes
+set ssl_force_tls = yes
 
-# Automatically poll subscribed mailboxes for new mail (new in 1.5.11)
-set imap_check_subscribed
-set imap_list_subscribed
 
-# unicode 
+### FROM-headers
+set realname = $my_realname
+set from = $my_fromaddr
+set use_from = yes
+
+
+### Address book
+# Add sender to abook
+macro index,pager A "<pipe-message>abook --add-email-quiet<return>" "add the sender address to abook"
+# enable abook Queries
+set query_command="abook --mutt-query '%s'"
+# enable tab-completion for abook searches in To: field
+bind editor <tab> complete-query
+# Launch abook
+macro generic,index,pager \ca "<shell-escape>abook<return>" "launch abook"
+
+
+### General settings
+set wait_key = no # dont require keypress after external command exits 0.
+unset mark_old # Read/new is sufficient
 set send_charset = 'utf-8'
-
-# editor
 set editor = "vim -c 'set tw=78'"
-
-# no ugly plus signs at line breaks
-unset markers  
-
-# http://wcm1.web.rice.edu/mutt-tips.html
-set text_flowed = yes
-
-# Includes the body of the message replied to.
-set include = yes
-
-# Dont ask for subject line when responding to email, use existing
-set fast_reply
-
-# forward subject formatting
-set forward_format = "Fwd: %s"
-
-# Speed up folders switch
-set sleep_time = 0
-
-# index formatting
-set index_format = '%4C %Z %{%b %d %R} %-15.15L - %s'
+unset markers # no ugly plus signs at line breaks
+set text_flowed = yes # http://wcm1.web.rice.edu/mutt-tips.html
+set include = yes # Includes the body of the message replied to.
+set fast_reply # Dont ask for subject line when responding to email, use existing
+set forward_format = "Fwd: %s" # forward subject formatting
+set sleep_time = 0 # Speed up folders switch
+set beep_new # terminal beepage for new mail!
+set smart_wrap  # don't split words
+set index_format = '%4C %Z %{%b %d %R} %-15.15L - %s' # index formatting
+set mail_check = 60 # Reduce polling frequency to a sane level
+set timeout = 10 # ...but poll the current mailbox more frequently (may be obsolete)
+set header_cache = '~/.mutt/.hcache'
+set message_cachedir = '~/.mutt/.msg_cache'
+set net_inc = 5 # Display download progress every 5K
 
 # Sorting
 set sort = threads
 set strict_threads = yes
-
 set sort_aux = 'reverse-last-date-received'
 #set sort_aux = 'last-date-received'
 #set sort_browser = 'reverse-date'
@@ -81,40 +94,13 @@ unset collapse_unread
 bind index - collapse-thread
 bind index _ collapse-all
 
-# don't split words
-set smart_wrap
 
-# Reduce polling frequency to a sane level
-set mail_check = 60
-
-# And poll the current mailbox more often (not needed with IDLE in post 1.5.11)
-set timeout = 10
-
-# keep a cache of headers for faster loading (1.5.9+?)
-set header_cache = '~/.mutt/.hcache'
-set message_cachedir = '~/.mutt/.msg_cache'
-
-# Display download progress every 5K
-set net_inc = 5
-
+### Key Bindings 
 #scroll inside the message rather than the index
 bind pager <up> previous-line
 bind pager <down> next-line
-
-# imap fetch mail
-bind index G imap-fetch-mail
-
-# Add to abook
-macro index,pager A "<pipe-message>abook --add-email-quiet<return>" "add the sender address to abook"
-# enable tab-completion for abook searches in To: field
-bind editor <tab> complete-query
-# enable abook Queries
-set query_command="abook --mutt-query '%s'"
-# Launch abook
-macro generic,index,pager \ca "<shell-escape>abook<return>" "launch abook"
-
-# Source other files
-set mailcap_path = ~/.mutt/mailcap
-source ~/.mutt/sidebar
-source ~/.mutt/colors
-source ~/.mutt/mime
+macro index gi "<change-folder>=INBOX<enter>" "Go to Inbox"
+macro index gs "<change-folder>=Sent Items<enter>" "Go to Sent"
+macro index gd "<change-folder>=Drafts<enter>" "Go to Drafts"
+macro index,pager b '<enter-command>toggle sidebar_visible<enter>' "Toggle sidebar"
+bind index B bounce-message # Remap bounce-message function to “B”
