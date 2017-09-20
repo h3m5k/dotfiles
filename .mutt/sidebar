@@ -11,6 +11,10 @@ set sidebar_format="%B% %* %?N?%N/?%S"
 #bindings
 bind index \CP sidebar-prev # Previous mailbox
 bind index \CN sidebar-next # Next mailbox
+#bind index \1064 sidebar-prev # Previous mailbox
+#bind index \1013 sidebar-next # Next mailbox
+#bind index \3A sidebar-prev # Previous mailbox
+#bind index \3B sidebar-next # Next mailbox
 bind index \CO sidebar-open # Open selected mailbox
 
 # colors
