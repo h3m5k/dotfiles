@@ -35,7 +35,7 @@ macro index G "<shell-escape>offlineimap -o -u syslog<return>" "Sync mail w offl
 
 
 ### SMTP-configuration
-set smtp_url = 'smtp://$my_username@smtp-x.axis.com:587'
+set smtp_url = "smtp://$my_username@smtp-x.axis.com:587"
 # Fix for SMTP no authenticators available
 set smtp_authenticators = 'gssapi:login'
 
