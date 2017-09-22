@@ -27,7 +27,7 @@ set spoolfile = '~/Maildir/INBOX' # Default inbox
 set folder = '~/Maildir' # Mail folder location
 set record = '+Sent Items'
 set postponed = '+Drafts'
-#set trash = '+Deleted Items' #SYNC THIS
+set trash = '+Deleted Items'
 # Mailboxes to show in the sidebar and monitor.
 mailboxes `echo -n "+ "; for file in ~/Maildir/*; do box=$(basename "$file"); echo -n "\"+$box\" "; done`
 # Fetch new mail
