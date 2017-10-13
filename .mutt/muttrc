@@ -28,8 +28,10 @@ set folder = '~/Maildir' # Mail folder location
 set record = '+Sent Items'
 set postponed = '+Drafts'
 set trash = '+Deleted Items'
+
 # Mailboxes to show in the sidebar and monitor.
-mailboxes `echo -n "+ "; for file in ~/Maildir/*; do box=$(basename "$file"); echo -n "\"+$box\" "; done`
+#mailboxes `echo -n "+ "; for file in ~/Maildir/*; do box=$(basename "$file"); [[ "$box" =~ "Deleted Items" ]] || echo -n "\"+$box\" "; done`
+mailboxes `for file in ~/Maildir/*; do box=$(basename "$file"); [[ "$box" =~ "Deleted Items" ]] || echo -n "\"+$box\" "; done`
 # Fetch new mail
 macro index G "<shell-escape>offlineimap -o -u syslog<return>" "Sync mail w offlineimap"
 

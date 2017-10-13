@@ -13,12 +13,13 @@ set ignorecase
 set autoindent
 set noswapfile
 set paste
+set cursorline
 " dont continue with comment after enter in insert or o/O
 set formatoptions-=cro
 
 " default to hybrid line numbers
 set number
-set relativenumber
+"set relativenumber
 
 " enable absolute line no toggle
 function! RelNumberToggle()
