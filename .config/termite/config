@@ -15,8 +15,8 @@ scrollback_lines = 10000
 #search_wrap = true
 #urgent_on_bell = true
 
-# $BROWSER is used by default if set, with xdg-open as a fallback
-#browser = xdg-open
+# $BROWSER is used by default if set, with x-www-browser as a fallback
+browser = x-www-browser
 
 # "system", "on" or "off"
 cursor_blink = on

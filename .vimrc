@@ -35,7 +35,7 @@ nnoremap <C-n> :call RelNumberToggle()<cr>
 " disable mouse
 set mouse-=a
 
-" show status line
+" show status line at all times
 set laststatus=2
 " Open tabs when switching buffers. to the existing tab if the buffer is open, or creating a new one if not
 set switchbuf=usetab,newtab
