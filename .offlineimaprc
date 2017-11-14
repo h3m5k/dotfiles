@@ -4,10 +4,12 @@
 # To use w systemd, copy .timer and .service files to /etc/systemd/user
 # and enable them.
 #
-# File is not to be symlinked until we handle pwurds better.
 
 [general]
 accounts = Work
+# enable keyring password import
+# content: import keyring
+pythonfile = ~/.offlineimap.py
 
 [Account Work]
 # min between syncs, regardless of type
@@ -31,5 +33,5 @@ remotehost = owa.axis.com
 ssl = yes
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 remoteuser = gorane
-remotepass = THEUBERSECRETPWURD
-folderfilter = lambda foldername: not re.search('^(Deleted\sItems\.\w+|Notes|Calendar|Contacts|Journal|Outbox|Tasks)$', foldername)
+remotepasseval = keyring.get_password('outlook', 'personal')
+folderfilter = lambda foldername: not re.search('^(Deleted\sItems\.\w+|Notes|Calendar|Contacts|Journal|Outbox|Tasks|Conversation\sHistory|Contacts.+)$', foldername)
