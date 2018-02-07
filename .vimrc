@@ -6,6 +6,7 @@ set nocompatible
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 " needed for pathogen to be able to work magic
+" and for tab settings below
 filetype plugin indent on
 
 syntax on
@@ -16,6 +17,15 @@ set noswapfile
 set cursorline
 " dont continue with comment after enter in insert or o/O
 set formatoptions-=cro
+
+" "TABWIDTH"
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+
 
 " default to hybrid line numbers
 set number
