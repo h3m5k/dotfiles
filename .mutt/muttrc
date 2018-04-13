@@ -75,7 +75,6 @@ set include = yes # Includes the body of the message replied to.
 set fast_reply # Dont ask for subject line when responding to email, use existing
 set forward_format = "Fwd: %s" # forward subject formatting
 set sleep_time = 0 # Speed up folders switch
-set beep_new # terminal beepage for new mail!
 set smart_wrap  # don't split words
 set index_format = '%4C %Z %{%b %d %R} %-15.15L - %s' # index formatting
 set mail_check = 60 # Reduce polling frequency to a sane level
@@ -83,6 +82,7 @@ set timeout = 10 # ...but poll the current mailbox more frequently (may be obsol
 set header_cache = '~/.mutt/.hcache'
 set message_cachedir = '~/.mutt/.msg_cache'
 set net_inc = 5 # Display download progress every 5K
+set new_mail_command = "/usr/bin/beep -f 1800 -l 100 -n -f 1850 -l100 -n -f 1950 -l100 && /usr/bin/notify-send 'MAIL!' 'Mailbox: %f, New: %n, Unread: %u'"
 
 # Sorting
 set sort = threads
