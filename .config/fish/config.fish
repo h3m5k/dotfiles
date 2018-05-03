@@ -5,6 +5,9 @@ end
 # editor
 set -Ux EDITOR vim
 
+# path
+set -gx PATH /usr/sbin $PATH
+
 set -x TERM xterm-256color
 # Colors
 # Reset
