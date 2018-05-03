@@ -6,7 +6,7 @@ end
 set -Ux EDITOR vim
 
 # path
-set -gx PATH /usr/sbin $PATH
+set -gx PATH /sbin /usr/sbin /usr/local/sbin $PATH
 
 set -x TERM xterm-256color
 # Colors
