@@ -82,7 +82,7 @@ set timeout = 10 # ...but poll the current mailbox more frequently (may be obsol
 set header_cache = '~/.mutt/.hcache'
 set message_cachedir = '~/.mutt/.msg_cache'
 set net_inc = 5 # Display download progress every 5K
-set new_mail_command = "/usr/bin/beep -f 1800 -l 100 -n -f 1850 -l100 -n -f 1950 -l100 && /usr/bin/notify-send 'MAIL!' 'Mailbox: %f, New: %n, Unread: %u'"
+set new_mail_command = "/usr/bin/beep -f 1800 -l 100 -n -f 1850 -l100 -n -f 1950 -l100 && /usr/bin/notify-send -t 60000 'MAIL!' 'Mailbox: %f, New: %n, Unread: %u'"
 
 # Sorting
 set sort = threads

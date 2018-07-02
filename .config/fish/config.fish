@@ -8,7 +8,7 @@ set -Ux EDITOR vim
 # path
 set -gx PATH /sbin /usr/sbin /usr/local/sbin $PATH
 
-set -x TERM xterm-256color
+set -gx TERM xterm-256color
 # Colors
 # Reset
 set ResetColor (set_color normal)       # Text Reset

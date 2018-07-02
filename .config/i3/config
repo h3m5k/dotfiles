@@ -90,7 +90,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi-dmenu.sh
 
 ## calculator
-bindsym $mod+c exec rofi -show calc -modi "calc:qalc -t"
+bindsym $mod+c exec rofi -location 6 -show calc -modi "calc:qalc -t"
 # window switching with rofi
 #bindsym $mod+Tab exec rofi -switchers 'run,window' -show run
 bindsym $mod+Tab exec rofi -modi 'window' -show window
