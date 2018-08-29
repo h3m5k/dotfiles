@@ -11,6 +11,11 @@ accounts = Work
 # content: import keyring
 pythonfile = ~/.offlineimap.py
 
+# Keyring management
+# * SET password: python -c "import keyring; keyring.set_password('outlook', 'personal', 'secretpass')"
+# * PRINT password: python -c "import keyring; print keyring.get_password('outlook', 'personal')"
+
+
 [Account Work]
 # min between syncs, regardless of type
 #autorefresh = 0.5
