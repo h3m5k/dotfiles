@@ -43,14 +43,14 @@ endfunc
 nnoremap <C-n> :call RelNumberToggle()<cr>
 
 " Toggle whitespace visibility
-function! WhiteSpaceToggle()
-  if(&list == 1)
-    set list !
-  else
-    set list
-    set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
-  endif
-endfunc
+"function! WhiteSpaceToggle()
+"  if(&list == 1)
+"    set list !
+"  else
+"    set list
+"    set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
+"  endif
+"endfunc
 
 nnoremap <C-w> :call WhiteSpaceToggle()<cr>
 
