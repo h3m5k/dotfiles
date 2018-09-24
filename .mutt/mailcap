@@ -4,3 +4,4 @@
 text/html; lynx -dump -width ${COLUMNS:-80} %s; nametemplate=%s.html; copiousoutput
 
 image/*; xloadimage -quiet -shrink %s
+text/calendar; mutt_ics; copiousoutput

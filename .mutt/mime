@@ -1,5 +1,6 @@
 # MIME types to auto-view as defined in mailcap
 auto_view text/html
+auto_view text/calendar
 
 # preferred available types, uses auto_view if matched.
 alternative_order text/plain text/enriched text/html text
