@@ -3,7 +3,7 @@ auto_view text/html
 auto_view text/calendar
 
 # preferred available types, uses auto_view if matched.
-alternative_order text/plain text/enriched text/html text
+alternative_order text/calendar text/plain text/enriched text/html text/*
 
 # forward message including attachments
 set mime_forward=yes 

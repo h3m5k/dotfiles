@@ -7,4 +7,5 @@
 .config/ranger/tagged
 .mutt/.hcache
 .mutt/.msg_cache
+.mutt/.cal
 .vim/.netrwhist

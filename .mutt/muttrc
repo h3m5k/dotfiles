@@ -105,3 +105,4 @@ macro index gs "<change-folder>=Sent Items<enter>" "Go to Sent"
 macro index gd "<change-folder>=Drafts<enter>" "Go to Drafts"
 macro index,pager b '<enter-command>toggle sidebar_visible<enter>' "Toggle sidebar"
 bind index B bounce-message # Remap bounce-message function to “B”
+macro pager \ck "<shell-escape>~/dotfiles/.mutt/helper_script/ics2khal.sh<return>" "Add calendar entry to Khal."

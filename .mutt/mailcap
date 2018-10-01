@@ -2,6 +2,5 @@
 #text/html; w3m -I %{charset} -T text/html; copiousoutput;
 # lynx only recognize files as text/html if file ends w .html, therfore nametemplate.
 text/html; lynx -dump -width ${COLUMNS:-80} %s; nametemplate=%s.html; copiousoutput
-
 image/*; xloadimage -quiet -shrink %s
-text/calendar; mutt_ics; copiousoutput
+text/calendar; ~/.mutt/helper_script/dump-ical.py %s; copiousoutput
